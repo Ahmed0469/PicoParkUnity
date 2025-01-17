@@ -1,0 +1,10 @@
+com.DefaultCompany.PookiePark.launcher-pngs-0 C:\PcData\UnityProjects\Pookie-Park\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\generated\res\pngs\release
+com.DefaultCompany.PookiePark.launcher-resValues-1 C:\PcData\UnityProjects\Pookie-Park\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\generated\res\resValues\release
+com.DefaultCompany.PookiePark.launcher-rs-2 C:\PcData\UnityProjects\Pookie-Park\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\generated\res\rs\release
+com.DefaultCompany.PookiePark.launcher-mergeReleaseResources-3 C:\PcData\UnityProjects\Pookie-Park\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.DefaultCompany.PookiePark.launcher-mergeReleaseResources-4 C:\PcData\UnityProjects\Pookie-Park\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.DefaultCompany.PookiePark.launcher-merged_res-5 C:\PcData\UnityProjects\Pookie-Park\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\intermediates\merged_res\release
+com.DefaultCompany.PookiePark.launcher-main-6 C:\PcData\UnityProjects\Pookie-Park\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\res
+com.DefaultCompany.PookiePark.launcher-release-7 C:\PcData\UnityProjects\Pookie-Park\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\release\res
+com.DefaultCompany.PookiePark.launcher-packaged_res-8 C:\PcData\UnityProjects\Pookie-Park\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\packaged_res\release
+com.DefaultCompany.PookiePark.launcher-jetified-audioinaec-9 C:\Users\masif\.gradle\caches\transforms-3\69644a5467009a89f467d16e8a5bd0a9\transformed\jetified-audioinaec\res
