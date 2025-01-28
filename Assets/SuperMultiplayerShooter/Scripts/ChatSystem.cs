@@ -224,7 +224,7 @@ namespace Visyde
             text1isOurs = ours;
             while (elapsedTime <= 3)
             {
-                string finalMessage = "\n" + "<color=#" + ColorUtility.ToHtmlStringRGBA(ours ? ourColor : othersColor) + ">" + from + "</color>:<color=" + ColorUtility.ToHtmlStringRGBA(ours ? ourChatColor : othersChatColor) + ">" + message + "</color>";
+                string finalMessage = "<color=#" + ColorUtility.ToHtmlStringRGBA(ours ? ourColor : othersColor) + ">" + from + "</color>:<color=" + ColorUtility.ToHtmlStringRGBA(ours ? ourChatColor : othersChatColor) + ">" + message + "</color>";
                 chatText1.gameObject.SetActive(true);
                 chatText1.text = finalMessage;
                 elapsedTime += Time.deltaTime;
@@ -240,7 +240,7 @@ namespace Visyde
             float elapsedTime = 0;
             while (elapsedTime <= 3)
             {
-                string finalMessage = "\n" + "<color=#" + ColorUtility.ToHtmlStringRGBA(ours ? ourColor : othersColor) + ">" + from + "</color>:<color=" + ColorUtility.ToHtmlStringRGBA(ours ? ourChatColor : othersChatColor) + ">" + message + "</color>";
+                string finalMessage = "<color=#" + ColorUtility.ToHtmlStringRGBA(ours ? ourColor : othersColor) + ">" + from + "</color>:<color=" + ColorUtility.ToHtmlStringRGBA(ours ? ourChatColor : othersChatColor) + ">" + message + "</color>";
                 chatText2.gameObject.SetActive(true);
                 chatText2.text = finalMessage;
                 elapsedTime += Time.deltaTime;

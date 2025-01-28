@@ -119,11 +119,11 @@
 -define:PUN_2_19_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"C:/PcData/UnityProjects/Pookie-Park/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
--r:"C:/PcData/UnityProjects/Pookie-Park/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.2/Mono.Cecil.dll"
--r:"C:/PcData/UnityProjects/Pookie-Park/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.2/Mono.Cecil.Mdb.dll"
--r:"C:/PcData/UnityProjects/Pookie-Park/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.2/Mono.Cecil.Pdb.dll"
--r:"C:/PcData/UnityProjects/Pookie-Park/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.2/Mono.Cecil.Rocks.dll"
+-r:"C:/PcData/UnityProjects/PookieParkClone/PicoParkUnity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+-r:"C:/PcData/UnityProjects/PookieParkClone/PicoParkUnity/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.2/Mono.Cecil.dll"
+-r:"C:/PcData/UnityProjects/PookieParkClone/PicoParkUnity/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.2/Mono.Cecil.Mdb.dll"
+-r:"C:/PcData/UnityProjects/PookieParkClone/PicoParkUnity/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.2/Mono.Cecil.Pdb.dll"
+-r:"C:/PcData/UnityProjects/PookieParkClone/PicoParkUnity/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.2/Mono.Cecil.Rocks.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.45f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.45f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.45f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"

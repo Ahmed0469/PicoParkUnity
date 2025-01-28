@@ -104,6 +104,7 @@ public class EightPlayersLevel2 : NetworkBehaviour
     public void RPC_DestroyBlock(int blockId)
     {
         glassBlocks[blockId].SetActive(false);
+        SoundManager.instance.PlayOneShot(SoundManager.instance.wallBreakSFX);
         if (Connector.instance.networkRunner.IsServer)
         {
             int blocksLeft = glassBlocks.FindAll(block => block.activeInHierarchy).Count;

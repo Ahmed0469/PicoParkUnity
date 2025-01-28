@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Fusion;
+using UnityEngine.SceneManagement;
 
 namespace Visyde
 {
@@ -24,7 +25,9 @@ namespace Visyde
         public Animator animator;
 
         // For cosmetics:
-        public Transform hatPoint;
+        public Transform hatPoint;        
+        public Transform glassesPoint;        
+        public Transform necklacePoint;        
     }
     public Character[] characters;                                  // list of characters for the spawnable characters (modifying this will not change the main menu character selection screen
 
@@ -53,6 +56,17 @@ namespace Visyde
     float jumpProgress;                                             // longer press means higher jump
     bool moving;                                                    // are we moving on ground?
     bool isFalling;                                                 // are we falling? (can be used for something like a falling animation)
+    bool isJumping
+        {
+            get
+            {
+                return !GameManager.instance.userVerticalAxis?rg.velocity.y > 2 : false;
+            }
+            set
+            {
+
+            }
+        }
     bool lastFrameGrounded;                                         // used for spawning landing vfx
     bool doneDeadZone;                                              // makes sure that DeadZoned() doesn't called repeatedly
     float lastGroundedTime;
@@ -71,6 +85,10 @@ namespace Visyde
         {
             return characters[curCharacterID];
         }
+            set
+            {
+
+            }
     }
     // Check if this player is ours and not owned by a bot or another player:
     public bool isPlayerOurs
@@ -91,9 +109,10 @@ namespace Visyde
             {
                 transform.position = networkPos;
                 rg.velocity = networkVel;
-                transform.localScale = new Vector3(networkScaleX, 1, 1);
+                transform.localScale = new Vector3(networkScaleX, 0.75f, 0.75f);
                 moving = networkMoving;
                 isFalling = networkIsFalling;
+                isJumping = networkIsJumping;
                 xInput = networkxInput;
                 yInput = networkyInput;
                 isGrounded = networkIsgrounded;
@@ -218,7 +237,7 @@ namespace Visyde
                     yInput = playerInput.yInput;
                 }
                 // Is moving on ground?:
-                moving = rg.velocity.x != 0 && isGrounded && xInput != 0;
+                moving = rg.velocity.x != 0 /*&& isGrounded*/ && xInput != 0;
                 //if (Object.HasStateAuthority || playerInstance.isMine)
                 //{
 
@@ -290,6 +309,7 @@ namespace Visyde
             character.animator.SetBool("Moving", moving);
             character.animator.SetBool("Dead", isDead);
             character.animator.SetBool("Falling", isFalling);
+            character.animator.SetBool("Jumping", isJumping);
 
             // Set the animator speed based on the current movement speed (only applies to grounded moving animations such as running):
             character.animator.speed = moving && isGrounded ? Mathf.Abs(xInput) : 1;
@@ -300,6 +320,7 @@ namespace Visyde
             networkScaleX = transform.localScale.x;
             networkMoving = moving;
             networkIsFalling = isFalling;
+            networkIsJumping = isJumping;
             networkxInput = xInput;
             networkyInput = yInput;
             networkIsgrounded = isGrounded;
@@ -390,7 +411,7 @@ namespace Visyde
                     // Flipping:
                     if (!stopLookingBackwards)
                     {
-                        t.localScale = new Vector3(rg.velocity.x > 0 ? 1 : rg.velocity.x < 0 ? -1 : t.localScale.x, 1, 1);
+                        t.localScale = new Vector3(rg.velocity.x > 0 ? -0.75f : rg.velocity.x < 0 ? 0.75f : t.localScale.x, 0.75f, 0.75f);
                     }
                 }                
                 // Animations:
@@ -399,6 +420,7 @@ namespace Visyde
                     character.animator.SetBool("Moving", moving);
                     character.animator.SetBool("Dead", isDead);
                     character.animator.SetBool("Falling", isFalling);
+                    character.animator.SetBool("Jumping", isJumping);
 
                     // Set the animator speed based on the current movement speed (only applies to grounded moving animations such as running):
                     character.animator.speed = moving && isGrounded ? Mathf.Abs(xInput) : 1;
@@ -420,19 +442,19 @@ namespace Visyde
             }
             else
             {
-                if (Object.HasStateAuthority)
+                if (SceneManager.GetActiveScene().name == "Game" && Object.HasStateAuthority)
                 {
                     if (!stopLookingBackwards)
                     {
                         if (rg.velocity.x < 0)
                         {
-                            transform.localScale = new Vector3(-1, 1, 1);
+                            transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
                         }
                         if (rg.velocity.x > 0)
                         {
-                            transform.localScale = new Vector3(1, 1, 1);
+                            transform.localScale = new Vector3(-0.75f, 0.75f, 0.75f);
                         }
-                        transform.localScale = new Vector3(rg.velocity.x > 0 ? 1 : rg.velocity.x < 0 ? -1 : transform.localScale.x, 1, 1);
+                        transform.localScale = new Vector3(rg.velocity.x > 0 ? -0.75f : rg.velocity.x < 0 ? 0.75f : transform.localScale.x, 0.75f, 0.75f);
                     }
                 }
             }
@@ -443,8 +465,12 @@ namespace Visyde
         public bool stopLookingBackwards = false;
         public Collider2D PlayerAtBottomCheckTrigger;
         public ContactFilter2D playerContactFilter2D;
-        public Collider2D[] colliders = new Collider2D[1];
+        //public Collider2D[] colliders = new Collider2D[1];
         float pingSentTimeElapsed = 3.0f;
+        Vector3 changedOffset;
+        Vector3 offset;
+        float bottomPlayerChangedXPos;
+        float bottomPlayerXPos;
         void FixedUpdate()
     {
         if (forPreview) return;
@@ -455,9 +481,9 @@ namespace Visyde
                 character.animator.speed = 0;
                 return;
             }
+            Collider2D[] colliders = new Collider2D[1];
             PlayerAtBottomCheckTrigger.OverlapCollider(playerContactFilter2D, colliders);
-            var moving = rg.velocity.x != 0 && xInput != 0;
-            if (GameManager.instance.gameStarted && colliders[0] != null && !moving)
+            if (GameManager.instance.gameStarted && colliders[0] != null && rg.velocity.x == 0 && xInput == 0)
             {
                 //if (!photonView.IsMine)
                 //{
@@ -468,12 +494,28 @@ namespace Visyde
                 //}
                 //else
                 //{
-                rg.position += colliders[0].gameObject != null ? new Vector2(colliders[0].GetComponent<PlayerController>().rg.position.x - rg.position.x, 0) : Vector2.zero;                
+                //changedOffset = colliders[0].gameObject != null ? new Vector2(colliders[0].GetComponent<PlayerController>().rg.position.x - rg.position.x, 0) : Vector2.zero;
+                //if (offset != changedOffset)
+                //{
+                //    offset = changedOffset;
+                //}
+                bottomPlayerChangedXPos = colliders[0].GetComponent<PlayerController>().rg.position.x;
+                var moving = rg.velocity.x != 0 && xInput != 0;
+                if (bottomPlayerXPos != bottomPlayerChangedXPos)
+                {
+                    if (bottomPlayerXPos != 0 && !moving)
+                    {
+                        rg.position += colliders[0].gameObject != null ? new Vector2(bottomPlayerChangedXPos - bottomPlayerXPos, 0) : Vector2.zero;
+                    }
+                    bottomPlayerXPos = bottomPlayerChangedXPos;
+                }
                 //}
             }
             else
             {
                 colliders[0] = null;
+                bottomPlayerChangedXPos = 0;
+                bottomPlayerXPos = 0;
             }
             if (GameManager.gameMode == GameMode.Multiplayer)
             {
@@ -493,7 +535,7 @@ namespace Visyde
                 }
                 rg.position = Vector2.SmoothDamp(rg.position, networkPos, ref vel, 0.3f);
                 rg.velocity = networkVel;
-                transform.localScale = new Vector3(networkScaleX,1,1);
+                transform.localScale = new Vector3(networkScaleX, 0.75f, 0.75f);
                 moving = networkMoving;
                 isFalling = networkIsFalling;
                 xInput = networkxInput;
@@ -506,6 +548,7 @@ namespace Visyde
                 character.animator.SetBool("Moving", moving);
                 character.animator.SetBool("Dead", isDead);
                 character.animator.SetBool("Falling", isFalling);
+                character.animator.SetBool("Jumping", isJumping);
 
                 // Set the animator speed based on the current movement speed (only applies to grounded moving animations such as running):
                 character.animator.speed = moving && isGrounded ? Mathf.Abs(xInput) : 1;
@@ -532,6 +575,7 @@ namespace Visyde
         [Networked] private float networkScaleX { get; set; }
         [Networked] private bool networkMoving { get; set; }
         [Networked] private bool networkIsFalling { get; set; }
+        [Networked] private bool networkIsJumping { get; set; }
         [Networked] private float networkxInput { get; set; }
         [Networked] private float networkyInput { get; set; }
         [Networked] private bool networkIsgrounded { get; set;}
@@ -596,7 +640,7 @@ namespace Visyde
             // Get the chosen character (locally):
             for (int i = 0; i < characters.Length; i++)
             {
-                if (characters[i].data == DataCarrier.characters[DataCarrier.chosenCharacter])
+                if (characters[i].data == DataCarrier.characterData)
                 {
                     curCharacterID = i;
                 }
@@ -645,28 +689,41 @@ namespace Visyde
                 playerInstance = gm.GetPlayerInstance(GameManager.instance.punPlayersAll.ToList().IndexOf(Object.InputAuthority));
                 //networkPlayerInstance = playerInstance;
                 //RPC_RestartPlayer(Object.InputAuthority);
+                // Get the chosen character of this player (we only need the index of the chosen character in DataCarrier's characters array):
+                int chosenCharacter = playerInstance.character;
+                for (int i = 0; i < characters.Length; i++)
+                {
+                    if (characters[i].data == DataCarrier.characterData)
+                    {
+                        curCharacterID = i;
+                    }
+                }
             }
         else
         {
             playerInstance = gm.GetPlayerInstance(actorNumber);
-        }
-        // Get the chosen character of this player (we only need the index of the chosen character in DataCarrier's characters array):
-        int chosenCharacter = playerInstance.character;
-        for (int i = 0; i < characters.Length; i++)
-        {
-            if (characters[i].data == DataCarrier.characters[chosenCharacter])
-            {
-                curCharacterID = i;
-            }
-        }
+                // Get the chosen character of this player (we only need the index of the chosen character in DataCarrier's characters array):
+                int chosenCharacter = playerInstance.character;
+                for (int i = 0; i < characters.Length; i++)
+                {
+                    if (characters[i].data == DataCarrier.singlePlayerCharactersData[chosenCharacter])
+                    {
+                        curCharacterID = i;
+                    }
+                }
+            }        
 
         // Enable only the chosen character's graphics:
         for (int i = 0; i < characters.Length; i++)
         {
             characters[i].animator.gameObject.SetActive(i == curCharacterID);
         }
+            if (GameManager.gameMode == GameMode.SinglePlayer)
+            {
+                cosmeticsManager.Refresh(playerInstance.cosmeticItems);
+            }
 
-    }        
+        }
 
         public void Jump()
     {
@@ -691,9 +748,9 @@ namespace Visyde
                     DoJump();
                 }
 
-                if (character.data.jumpSFX.Length > 0)
+                if (SoundManager.instance.playerJumpingSFX.Length > 0)
             {
-                aus.PlayOneShot(character.data.jumpSFX[Random.Range(0, character.data.jumpSFX.Length)]);
+                SoundManager.instance.PlayOneShot(SoundManager.instance.playerJumpingSFX[Random.Range(0, SoundManager.instance.playerJumpingSFX.Length)]);
             }
         }
     }
@@ -739,7 +796,8 @@ namespace Visyde
     {
         gm.pooler.Spawn("LandDust", transform.position);
         // Sound:
-        if (character.data.landingsSFX.Length > 0) aus.PlayOneShot(character.data.landingsSFX[Random.Range(0, character.data.landingsSFX.Length)]);
+        //if (character.data.landingsSFX.Length > 0) aus.PlayOneShot(character.data.landingsSFX[Random.Range(0, character.data.landingsSFX.Length)]);
+        if (SoundManager.instance.playerLandingSFX.Length > 0) SoundManager.instance.PlayOneShot(SoundManager.instance.playerLandingSFX[Random.Range(0, SoundManager.instance.playerLandingSFX.Length)]);
     }
 
     public void OwnerShootCommand()

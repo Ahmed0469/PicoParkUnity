@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class SixPlayersLevel4 : NetworkBehaviour
 {
     [Networked] private Vector3 networkElevatorPos { get; set; }
+    public List<GameObject> btnsList = new();
     public Slider healthSlider;
     Vector2 veloc = Vector3.zero;
     public ContactFilter2D contactFilter;
@@ -17,6 +18,7 @@ public class SixPlayersLevel4 : NetworkBehaviour
     public TextMeshPro elevatorText;
     public GameObject key;
     Vector2 elevatorDefaultPos;
+    float elapsedTime = 0;
 
     int btn1 = 0;
     int btn2 = 0;
@@ -37,6 +39,13 @@ public class SixPlayersLevel4 : NetworkBehaviour
             elevatorDefaultPos = playerElevator.transform.parent.position;
             networkElevatorPos = playerElevator.transform.parent.position;
             StartCoroutine(WaitSpawn());
+        }
+        for (int i = 0; i < Connector.instance.networkRunner.SessionInfo.PlayerCount; i++)
+        {
+            if (i < btnsList.Count)
+            {
+                btnsList[i].SetActive(true);
+            }
         }
     }
     IEnumerator WaitSpawn()
@@ -94,7 +103,7 @@ public class SixPlayersLevel4 : NetworkBehaviour
     {
         if (Object.HasStateAuthority)
         {
-            int playersOnBtn = btn1 * btn2 * btn3 * btn4 * btn5 * btn6;
+            int playersOnBtn = (btnsList[0].activeInHierarchy?btn1:1) * (btnsList[1].activeInHierarchy ? btn2 : 1) * (btnsList[2].activeInHierarchy ? btn3 : 1 ) * (btnsList[3].activeInHierarchy ? btn4 : 1) * (btnsList[4].activeInHierarchy ? btn5 : 1) * (btnsList[5].activeInHierarchy ? btn6 : 1);
             if (playersOnBtn != 0)
             {
                 if (!key.activeInHierarchy)
@@ -110,10 +119,18 @@ public class SixPlayersLevel4 : NetworkBehaviour
             if (collideds.Count == 2)
             {
                 playerElevator.transform.parent.position = Vector2.Lerp(playerElevator.transform.parent.position, new Vector3(playerElevator.transform.parent.position.x, 5), Time.deltaTime / 2);
+                elapsedTime = 0;
             }
             else
             {
-                playerElevator.transform.parent.position = Vector2.Lerp(playerElevator.transform.parent.position, elevatorDefaultPos, Time.deltaTime * 1.3f);
+                if (elapsedTime > 1f)
+                {
+                    playerElevator.transform.parent.position = Vector2.Lerp(playerElevator.transform.parent.position, elevatorDefaultPos, Time.deltaTime * 1.3f);                    
+                }
+                else
+                {
+                    elapsedTime += Time.deltaTime;
+                }
             }
             networkElevatorPos = playerElevator.transform.parent.position;
         }

@@ -205,6 +205,8 @@ namespace Visyde
         async void Start()
         {            
             Connector.instance.networkRunner.AddCallbacks(this);
+            SoundManager.instance.StopMusic();
+            SoundManager.instance.audioSource.volume = 1;
             // Setups:
             isDraw = false;
             //gameCam.gm = this;
@@ -461,7 +463,25 @@ namespace Visyde
                              player.GetComponent<PlayerController>().character.hatPoint.position, Quaternion.identity,
                              punPlayersAll[i]
                             );
-                        }                        
+                        }
+                        if (players[i].cosmeticItems.glasses != -1)
+                        {
+                            await Connector.instance.networkRunner.SpawnAsync
+                            (
+                             ItemDatabase.instance.glasses[players[i].cosmeticItems.glasses].prefab,
+                             player.GetComponent<PlayerController>().character.glassesPoint.position, Quaternion.identity,
+                             punPlayersAll[i]
+                            );
+                        }
+                        if (players[i].cosmeticItems.necklace != -1)
+                        {
+                            await Connector.instance.networkRunner.SpawnAsync
+                            (
+                             ItemDatabase.instance.necklaces[players[i].cosmeticItems.necklace].prefab,
+                             player.GetComponent<PlayerController>().character.necklacePoint.position, Quaternion.identity,
+                             punPlayersAll[i]
+                            );
+                        }
                         //hat.transform.SetParent(player.GetComponent<PlayerController>().character.hatPoint);
                     }
                     //for (int i = 0; i < punPlayersAll.Length; i++)
@@ -713,7 +733,12 @@ namespace Visyde
                             Debug.Log(Connector.instance.playerData.Count + "NickName Count");
                             string nickName = Connector.instance.playerData[actorNumber].nickName;
                             int character = Connector.instance.playerData[actorNumber].characterData;
-                            Cosmetics cosmetics = new Cosmetics(hat: Connector.instance.playerData[actorNumber].choosenHat);
+                            Cosmetics cosmetics = new Cosmetics
+                                (
+                                hat: Connector.instance.playerData[actorNumber].choosenHat,
+                                glasses: Connector.instance.playerData[actorNumber].choosenGlasses,
+                                necklace: Connector.instance.playerData[actorNumber].choosenNecklace
+                                );
 
                             p[i] = new PlayerInstance(
                                 actorNumber, nickName, 
@@ -731,7 +756,12 @@ namespace Visyde
                         bool isMine = i == 0;
                         p[i] = new PlayerInstance(i, $"SinglePlayer{i}", isMine, false,
                             i,
-                            new Cosmetics(-1, -1),
+                            new Cosmetics
+                            (
+                                hat: DataCarrier.chosenHat,
+                                glasses: DataCarrier.chosenGlasses,
+                                necklace: DataCarrier.chosenNecklace
+                                ),
                             playerAll[i]);
                     }
                 }
@@ -1019,6 +1049,7 @@ namespace Visyde
         {
             //DataCarrier.message = "You've been disconnected from the game!";
             DataCarrier.LoadScene("MainMenu");
+            Connector.instance.networkRunner.Shutdown();
         }
 
         public void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token)

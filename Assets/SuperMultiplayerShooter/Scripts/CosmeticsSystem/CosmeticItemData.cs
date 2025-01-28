@@ -14,11 +14,16 @@ namespace Visyde
     {
         public Sprite icon;
         public CosmeticType itemType = CosmeticType.Hat;
+        public int price = 0;
+        public string inAppID;
+        public bool isRewarded = false;
         public GameObject prefab;
     }
 
     public enum CosmeticType{
         Hat,
+        Glasses,
+        Necklace
         //...add more!
     }
 }

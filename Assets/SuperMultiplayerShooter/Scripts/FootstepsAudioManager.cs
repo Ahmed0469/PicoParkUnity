@@ -17,7 +17,8 @@ namespace Visyde
         public void Step()
         {
             // Randomly choose a footstep sound from the character data and play it one shot:
-            player.aus.PlayOneShot(player.character.data.footstepSFX[Random.Range(0, player.character.data.footstepSFX.Length)]);
+            //player.aus.PlayOneShot(player.character.data.footstepSFX[Random.Range(0, player.character.data.footstepSFX.Length)]);
+            SoundManager.instance.PlayOneShot(SoundManager.instance.playerFootStepSFX[Random.Range(0, SoundManager.instance.playerFootStepSFX.Length)]);
         }
     }
 }

@@ -24,6 +24,7 @@ public class FourPlayersLevel2 : NetworkBehaviour
                     if (colliders[0] != null)
                     {
                         Object.Runner.Despawn(coin);
+                        RPC_CoindDestroySound();
                         coinsCollected++;
                         if (coinsCollected == coinSpawns.Count)
                         {
@@ -33,6 +34,11 @@ public class FourPlayersLevel2 : NetworkBehaviour
                 });
             }
         }        
+    }
+    [Rpc]
+    public void RPC_CoindDestroySound()
+    {
+        SoundManager.instance.PlayOneShot(SoundManager.instance.coinCatchSFX);
     }
     [Rpc]
     public void RPC_SpawnKey()

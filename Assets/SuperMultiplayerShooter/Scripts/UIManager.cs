@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Visyde
@@ -153,7 +154,15 @@ namespace Visyde
                     if (!GameManager.instance.LevelWinScreen.activeInHierarchy)
                     {
                         gameOverPanel.SetActive(true);
-                        restartBtn.interactable = Connector.instance.networkRunner.IsServer;
+                        SoundManager.instance.PlayOneShot(SoundManager.instance.looseSFX);
+                        if (Connector.instance.networkRunner.IsServer)
+                        {
+                            StartCoroutine(RestartBtnDelay());
+                        }
+                        else
+                        {
+                            restartBtn.interactable = Connector.instance.networkRunner.IsServer;
+                        }
                     }                    
                     winningPlayerText.text = "Game Over!";
                     //subTextObject.SetActive(!GameManager.isDraw);
@@ -185,9 +194,9 @@ namespace Visyde
                         mainPanel.gameObject.SetActive(curCountdown == 0);
 
                         // Sound:
-                        if (curCountdown < countDownSFX.Length)
+                        if (curCountdown < SoundManager.instance.countDownSFX.Length)
                         {
-                            mainAus.PlayOneShot(countDownSFX[curCountdown]);
+                            SoundManager.instance.PlayOneShot(SoundManager.instance.countDownSFX[curCountdown]);
 
                             // Refresh boards (just to make sure we're displaying the latest infos before the boards appear, not necessarily important):
                             UpdateBoards();
@@ -207,7 +216,7 @@ namespace Visyde
                         gameTimerText.transform.localScale = Vector3.one * 2;
 
                         // Sound:
-                        mainAus.PlayOneShot(timeTickSFX);
+                        SoundManager.instance.PlayOneShot(SoundManager.instance.timeTickSFX);
                         curRemainingTimeTick -= 1;
                     }
 
@@ -229,6 +238,72 @@ namespace Visyde
                 //scoreboardObj.SetActive(gm.controlsManager.showScoreboard);
 
                 
+            }
+        }
+        IEnumerator RestartBtnDelay()
+        {
+            yield return new WaitForSecondsRealtime(1f);
+            restartBtn.interactable = Connector.instance.networkRunner.IsServer;
+        }
+        public GameObject settingsPanel;
+        public GameObject MusicOffBtn;
+        public GameObject MusicOnBtn;
+        public GameObject SoundOffBtn;
+        public GameObject SoundOnBtn;
+        public void TurnOnSettingsPanel()
+        {
+            settingsPanel.SetActive(true);
+            if (PlayerPrefs.GetInt("Music", 1) == 0)
+            {
+                MusicOffBtn.SetActive(true);
+                MusicOnBtn.SetActive(false);
+            }
+            else
+            {
+                MusicOffBtn.SetActive(false);
+                MusicOnBtn.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Sound", 1) == 0)
+            {
+                SoundOffBtn.SetActive(true);
+                SoundOnBtn.SetActive(false);
+            }
+            else
+            {
+                SoundOffBtn.SetActive(false);
+                SoundOnBtn.SetActive(true);
+            }
+        }
+        public void OnClickMusicOn(bool turnOff)
+        {
+            if (turnOff)
+            {
+                PlayerPrefs.SetInt("Music", 0);
+                MusicOffBtn.SetActive(true);
+                MusicOnBtn.SetActive(false);
+                //SoundManager.instance.StopMusic();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Music", 1);
+                MusicOffBtn.SetActive(false);
+                MusicOnBtn.SetActive(true);
+                //SoundManager.instance.PlayMusic();
+            }
+        }
+        public void OnClickSound(bool turnOff)
+        {
+            if (turnOff)
+            {
+                PlayerPrefs.SetInt("Sound", 0);
+                SoundOffBtn.SetActive(true);
+                SoundOnBtn.SetActive(false);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Sound", 1);
+                SoundOffBtn.SetActive(false);
+                SoundOnBtn.SetActive(true);
             }
         }
 
@@ -337,7 +412,7 @@ namespace Visyde
                     DisplayMessage("You've been killed by " + killer.playerName, MessageType.Death);
                 }
                 // Die sound effect:
-                mainAus.PlayOneShot(dieSFX);
+                SoundManager.instance.PlayOneShot(SoundManager.instance.playerDieSFX);
             }
             else
             {
@@ -348,7 +423,7 @@ namespace Visyde
                     // Kill sound effect:
                     //float baseMK = gm.ourPlayer.curMultikill <= gm.multiKillMessages.Length ? gm.ourPlayer.curMultikill : gm.multiKillMessages.Length;
                     //killAus.pitch = gm.ourPlayer.curMultikill > 1 ? baseMK * baseMK * multikillSfxPitchFactor / 10 + 1 : 1;
-                    killAus.PlayOneShot(killSFX);
+                    SoundManager.instance.PlayOneShot(SoundManager.instance.killSFX);
                 }
                 else
                 {

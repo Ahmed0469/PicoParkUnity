@@ -53,6 +53,14 @@ public class FourPlayersLevel4 : NetworkBehaviour
             rightWallDefaultScale = rightWall.localScale;
             SpawnWeightBlocsk();
         }
+        if (Connector.instance.networkRunner.SessionInfo.PlayerCount > 2)
+        {
+            weightBtns[3].gameObject.SetActive(true);
+        }
+        if (Connector.instance.networkRunner.SessionInfo.PlayerCount > 3)
+        {
+            weightBtns[4].gameObject.SetActive(true);
+        }
     }
     async void SpawnWeightBlocsk()
     {
@@ -87,7 +95,8 @@ public class FourPlayersLevel4 : NetworkBehaviour
     {
         if (Connector.instance.networkRunner.IsServer)
         {
-            int product = btnInts.Aggregate(1, (acc, num) => acc * num);
+            //int product = btnInts.Aggregate(1, (acc, num) => acc * num);
+            int product = btnInts[0] * btnInts[1] * btnInts[2] * (weightBtns[3].gameObject.activeInHierarchy ? btnInts[3] : 1) * (weightBtns[4].gameObject.activeInHierarchy ? btnInts[4] : 1);
             if (product == 1)
             {
                 rightWall.position = Vector2.Lerp(rightWall.position, rightWallAfterPos.position, Time.deltaTime * 5);

@@ -10,6 +10,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Visyde;
 using UnityEngine.SceneManagement;
+//using Google.Play.Review;
+//using UnityEngine.iOS;
 
 public class PlayfabLogin : MonoBehaviour
 {
@@ -39,7 +41,12 @@ public class PlayfabLogin : MonoBehaviour
     int totalFriendInteractions;
     public GameObject lobbyMessageIndicator;
     public GameObject friendRequestMessageIndicator;
-    public GameObject micdisabledObject;
+    public GameObject micdisabledObject; public GameObject MusicOnBtn;
+    public GameObject MusicOffBtn;
+    public GameObject SoundOnBtn;
+    public GameObject SoundOffBtn;
+    public GameObject settingsPanel;
+    public List<string> inAppIds = new();
     private void OnEnable()
     {
         ChatSystem.OnRoomInvite += HandleRoomInvitation;
@@ -72,7 +79,7 @@ public class PlayfabLogin : MonoBehaviour
         else if (PlayerPrefs.GetInt("GuestLogin") == 1)
         {
             username = PlayerPrefs.GetString("USERNAME");
-            guestId = PlayerPrefs.GetString("USERNAME");
+            guestId = PlayerPrefs.GetString("GUESTUSERNAME");
             var request = new LoginWithCustomIDRequest
             {
                 CustomId = guestId,
@@ -87,10 +94,169 @@ public class PlayfabLogin : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
-    #region Login
+    #region PlayerData
+    public void GetPlayerData(string playFabId)
+    {
+        PlayFabClientAPI.GetUserData
+            (
+            new GetUserDataRequest()
+            {
+                PlayFabId = playFabId,
+                Keys = null
+            },
+            (resultsuccess) =>
+            {
+                if (resultsuccess.Data == null || !resultsuccess.Data.ContainsKey("InAppData"))
+                {
+                    SetPlayerData();
+                }
+                else
+                {
+                    InAppData inAppDataClass = JsonUtility.FromJson<InAppData>(resultsuccess.Data["InAppData"].Value);
+                    for (int i = 0; i < inAppIds.Count; i++)
+                    {
+                        int value = int.Parse(inAppDataClass.inAppData.Find(item => item.key == inAppIds[i]).value);
+                        PlayerPrefs.SetInt(inAppIds[i], value);
+                        PlayerPrefs.Save();
+                        FindObjectOfType<CharacterCustomizer>().RefreshSlots();
+                    }
+                }                
+            },
+            (resultError) =>
+            {
+                Debug.Log(resultError.ErrorMessage);
+            }
+            );
+    }
+    public void SetPlayerData()
+    {
+        InAppData inAppDataClass = new InAppData();
+        for (int i = 0; i < inAppIds.Count; i++)
+        {
+            inAppDataClass.inAppData.Add(new InAppDataItem { key = inAppIds[i], value = PlayerPrefs.GetInt(inAppIds[i], 0).ToString() });
+        }
+        string jsonData = JsonUtility.ToJson(inAppDataClass);
+        PlayFabClientAPI.UpdateUserData
+            (
+            new UpdateUserDataRequest() 
+            {
+                Data = new Dictionary<string, string>()
+                {
+                    {"InAppData",jsonData }
+                }
+            },
+            (resultSuccess) => 
+            {
+                Debug.Log("SetDataSuccesfull");
+            },
+            (resultError) => 
+            {
+                Debug.Log("SetData Error " + resultError.ErrorMessage);
+            }
+            );
+    }    
+    #endregion
+    #region Login    
+    public void OnClickRateUsBtn()
+    {
+        StartCoroutine(ReviewCR());
+    }
+    IEnumerator ReviewCR()
+    {
+        yield return null;
+#if PLATFORM_ANDROID
+        //var _reviewManager = new ReviewManager();
+        //var requestFlowOperation = _reviewManager.RequestReviewFlow();
+        //yield return requestFlowOperation;
+        //if (requestFlowOperation.Error != ReviewErrorCode.NoError)
+        //{
+        //    yield break;
+        //}
+        //var _playReviewInfo = requestFlowOperation.GetResult();
+
+        //var launchFlowOperation = _reviewManager.LaunchReviewFlow(_playReviewInfo);
+        //yield return launchFlowOperation;
+        //_playReviewInfo = null; // Reset the object
+        //if (launchFlowOperation.Error != ReviewErrorCode.NoError)
+        //{
+        //    // Log error. For example, using launchFlowOperation.Error.ToString().
+        //    yield break;
+        //}
+        ////The flow has finished. The API does not indicate whether the user
+        //// reviewed or not, or even whether the review dialog was shown. Thus, no
+        //// matter the result, we continue our app flow.
+#else
+        //Device.RequestStoreReview();
+#endif
+
+    }
+    public void ChangeRegion()
+    {
+        Connector.regionSelected = false;
+        Connector.instance.Disconnect();
+        Connector.instance.RefreshRegionDropdown();
+        settingsPanel.SetActive(false);
+    }
+    public void TurnOnSettingsPanel()
+    {
+        settingsPanel.SetActive(true);
+        if (PlayerPrefs.GetInt("Music", 1) == 0)
+        {
+            MusicOffBtn.SetActive(true);
+            MusicOnBtn.SetActive(false);
+        }
+        else
+        {
+            MusicOffBtn.SetActive(false);
+            MusicOnBtn.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("Sound", 1) == 0)
+        {
+            SoundOffBtn.SetActive(true);
+            SoundOnBtn.SetActive(false);
+        }
+        else
+        {
+            SoundOffBtn.SetActive(false);
+            SoundOnBtn.SetActive(true);
+        }
+    }
+    public void OnClickMusicOn(bool turnOff)
+    {
+        if (turnOff)
+        {
+            PlayerPrefs.SetInt("Music",0);
+            MusicOffBtn.SetActive(true);
+            MusicOnBtn.SetActive(false);
+            SoundManager.instance.StopMusic();
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Music", 1);
+            MusicOffBtn.SetActive(false);
+            MusicOnBtn.SetActive(true);
+            SoundManager.instance.PlayMusic();
+        }
+    }
+    public void OnClickSound(bool turnOff)
+    {
+        if (turnOff)
+        {
+            PlayerPrefs.SetInt("Sound", 0);
+            SoundOffBtn.SetActive(true);
+            SoundOnBtn.SetActive(false);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Sound", 1);
+            SoundOffBtn.SetActive(false);
+            SoundOnBtn.SetActive(true);
+        }
+    }
     public void SignOut()
     {
         PlayerPrefs.SetInt("RememberMe", 0);
+        PlayerPrefs.SetInt("GuestLogin",0);
         SceneManager.LoadScene(0);
     }
     public void RememberMeCheck(GameObject tickObj)
@@ -105,7 +271,8 @@ public class PlayfabLogin : MonoBehaviour
         username = guestId;
         Debug.Log(guestId + " Working");
         PlayerPrefs.SetString("USERNAME", guestId);
-        SuccesSigning();
+        PlayerPrefs.SetString("GUESTUSERNAME", guestId);
+        SuccesSigning();        
         GetPlayers();
     }
     private void OnLoginSuccess(LoginResult result)
@@ -114,12 +281,14 @@ public class PlayfabLogin : MonoBehaviour
         Debug.Log(result.InfoResultPayload.AccountInfo.Username + " Working");
         PlayerPrefs.SetString("USERNAME", result.InfoResultPayload.AccountInfo.Username);
         SuccesSigning();
+        GetPlayerData(result.PlayFabId);
         GetPlayers();
     }
     private void OnRegisterSuccess(RegisterPlayFabUserResult result)
     {
         PlayerPrefs.SetString("USERNAME", username);
         SuccesSigning();
+        GetPlayerData(result.PlayFabId);
         GetPlayers();
     }
     private void SuccesSigning()
@@ -159,7 +328,7 @@ public class PlayfabLogin : MonoBehaviour
     {
         Debug.LogError(error.GenerateErrorReport());
         registerFailedText.gameObject.SetActive(true);
-        registerFailedText.text = error.GenerateErrorReport();
+        registerFailedText.text = "Password length must be greater than 6\nEmail must be Valid and a Unique Username";
     }
     public void GetUserEmail(InputField emailIn)
     {
@@ -180,7 +349,14 @@ public class PlayfabLogin : MonoBehaviour
     }
     public void OnClickGuestLogin()
     {
-        guestId = "GuestPlayer" + DateTime.UtcNow.Ticks;
+        if (PlayerPrefs.HasKey("GUESTUSERNAME"))
+        {
+            guestId = PlayerPrefs.GetString("GUESTUSERNAME");
+        }
+        else
+        {
+            guestId = "GuestPlayer" + DateTime.UtcNow.Ticks;
+        }
         var request = new LoginWithCustomIDRequest
         {            
             CustomId = guestId,
@@ -473,4 +649,15 @@ public class PlayfabLogin : MonoBehaviour
         Debug.Log("AddFriend Error " + error.Error.ToString());
     }
     #endregion
+}
+[Serializable]
+public class InAppData
+{
+    public List<InAppDataItem> inAppData = new List<InAppDataItem>();
+}
+[Serializable]
+public class InAppDataItem
+{
+    public string key;
+    public string value;
 }

@@ -122,7 +122,7 @@
 -define:PUN_2_19_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"C:/PcData/UnityProjects/Pookie-Park/Library/PackageCache/com.unity.burst@1.8.18/Unity.Burst.Unsafe.dll"
+-r:"C:/PcData/UnityProjects/PookieParkClone/PicoParkUnity/Library/PackageCache/com.unity.burst@1.8.18/Unity.Burst.Unsafe.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.45f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.45f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.45f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"

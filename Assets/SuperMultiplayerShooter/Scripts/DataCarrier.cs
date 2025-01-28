@@ -16,9 +16,12 @@ namespace Visyde
         public static string message = "";
         public static string sceneToLoad = "";
         public static int chosenCharacter;
-        public static CharacterData[] characters;
+        public static CharacterData characterData;
+        public static CharacterData[] singlePlayerCharactersData;
 
         public static int chosenHat = -1;
+        public static int chosenGlasses = -1;
+        public static int chosenNecklace = -1;
 
         public static void LoadScene(string sceneName)
         {

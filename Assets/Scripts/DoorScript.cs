@@ -1,6 +1,7 @@
 using UnityEngine;
 using Visyde;
 using Fusion;
+using System.Collections;
 
 public class DoorScript : NetworkBehaviour
 {
@@ -43,7 +44,15 @@ public class DoorScript : NetworkBehaviour
                             if (!FindObjectOfType<UIManager>().gameOverPanel.activeInHierarchy)
                             {
                                 GameManager.instance.LevelWinScreen.SetActive(true);
-                                GameManager.instance.nextLevelBtn.interactable = Connector.instance.networkRunner.IsServer;
+                                SoundManager.instance.PlayOneShot(SoundManager.instance.winSFX);
+                                if (Connector.instance.networkRunner.IsServer)
+                                {
+                                    StartCoroutine(NextLevelBtnDelay());
+                                }
+                                else
+                                {
+                                    GameManager.instance.nextLevelBtn.interactable = Connector.instance.networkRunner.IsServer;
+                                }
                             }
 
                         }
@@ -72,6 +81,8 @@ public class DoorScript : NetworkBehaviour
                         if (!FindObjectOfType<UIManager>().gameOverPanel.activeInHierarchy)
                         {
                             GameManager.instance.LevelWinScreen.SetActive(true);
+                            //AdsManager.instance.ShowInterstitialAd();
+                            SoundManager.instance.PlayOneShot(SoundManager.instance.winSFX);
                             GameManager.instance.nextLevelBtn.interactable = true;
                         }
 
@@ -116,7 +127,15 @@ public class DoorScript : NetworkBehaviour
                             if (!FindObjectOfType<UIManager>().gameOverPanel.activeInHierarchy)
                             {
                                 GameManager.instance.LevelWinScreen.SetActive(true);
-                                GameManager.instance.nextLevelBtn.interactable = Connector.instance.networkRunner.IsServer;
+                                SoundManager.instance.PlayOneShot(SoundManager.instance.winSFX);
+                                if (Connector.instance.networkRunner.IsServer)
+                                {
+                                    StartCoroutine(NextLevelBtnDelay());
+                                }
+                                else
+                                {
+                                    GameManager.instance.nextLevelBtn.interactable = Connector.instance.networkRunner.IsServer;
+                                }
                             }
 
                         }
@@ -145,6 +164,8 @@ public class DoorScript : NetworkBehaviour
                         if (!FindObjectOfType<UIManager>().gameOverPanel.activeInHierarchy)
                         {
                             GameManager.instance.LevelWinScreen.SetActive(true);
+                            //AdsManager.instance.ShowInterstitialAd();
+                            SoundManager.instance.PlayOneShot(SoundManager.instance.winSFX);
                             GameManager.instance.nextLevelBtn.interactable = true;
                         }
 
@@ -153,13 +174,26 @@ public class DoorScript : NetworkBehaviour
             }
         }
     }
+    IEnumerator NextLevelBtnDelay()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        GameManager.instance.nextLevelBtn.interactable = true;
+    }
     [Rpc]
     public void RPC_LevelComplete()
     {
         if (!FindObjectOfType<UIManager>().gameOverPanel.activeInHierarchy)
         {
             GameManager.instance.LevelWinScreen.SetActive(true);
-            GameManager.instance.nextLevelBtn.interactable = Connector.instance.networkRunner.IsServer;
+            SoundManager.instance.PlayOneShot(SoundManager.instance.winSFX);
+            if (Connector.instance.networkRunner.IsServer)
+            {
+                StartCoroutine(NextLevelBtnDelay());
+            }
+            else
+            {
+                GameManager.instance.nextLevelBtn.interactable = Connector.instance.networkRunner.IsServer;
+            }
         }
     }
     [Rpc]
@@ -177,6 +211,7 @@ public class DoorScript : NetworkBehaviour
         if (!FindObjectOfType<UIManager>().gameOverPanel.activeInHierarchy)
         {
             GameManager.instance.LevelWinScreen.SetActive(true);
+            SoundManager.instance.PlayOneShot(SoundManager.instance.winSFX);
             GameManager.instance.nextLevelBtn.interactable = true;
         }
     }    

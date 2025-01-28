@@ -392,7 +392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4738854440046638
 Transform:
   m_ObjectHideFlags: 0
@@ -540,6 +540,7 @@ MonoBehaviour:
   talkingIndicator: {fileID: 514045825284510835}
   playerHat: {fileID: 0}
   cosmeticsManager: {fileID: 5732537548818131023}
+  playersTotalWeight: 0
   playerInstance:
     playerID: 0
     playerName: 
@@ -551,12 +552,15 @@ MonoBehaviour:
   isOnJumpPad: 0
   nMousePos: {x: 0, y: 0, z: 0}
   xInput: 0
+  yInput: 0
   rg: {fileID: 50395683206262458}
   lastPos: {x: 0, y: 0}
   groundCheckerRadius: 0.249
   groundCheckerOffset: {x: 0, y: 0.248}
   isGrounded: 0
+  slidePlayer: 0
   stopRegularVelocity: 0
+  stopLookingBackwards: 0
   PlayerAtBottomCheckTrigger: {fileID: 5537636296764039871}
   playerContactFilter2D:
     useTriggers: 0

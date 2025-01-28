@@ -9,6 +9,8 @@ namespace Visyde
         public static ItemDatabase instance;
 
         public CosmeticItemData[] hats;
+        public CosmeticItemData[] glasses;
+        public CosmeticItemData[] necklaces;
 
         void Awake()
         {

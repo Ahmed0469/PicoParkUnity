@@ -17,7 +17,8 @@ public class TwoPlayersLevel2 : NetworkBehaviour
     public BoxCollider2D playerElevator;
     public Transform fallPosOne;
     public Transform fallPosTwo;
-    Vector2 elevatorDefaultPos;    
+    Vector2 elevatorDefaultPos;
+    float elapsedTime = 0;
     public override void Spawned()
     {
         elevatorDefaultPos = playerElevator.transform.parent.position;
@@ -41,10 +42,18 @@ public class TwoPlayersLevel2 : NetworkBehaviour
             if (collideds.Count == Connector.instance.networkRunner.SessionInfo.PlayerCount)
             {
                 playerElevator.transform.parent.position = Vector2.Lerp(playerElevator.transform.parent.position, new Vector3(playerElevator.transform.parent.position.x, 5), Time.deltaTime / 2);
+                elapsedTime = 0;
             }
             else
             {
-                playerElevator.transform.parent.position = Vector2.Lerp(playerElevator.transform.parent.position, elevatorDefaultPos, Time.deltaTime * 1.3f);
+                if (elapsedTime > 1)
+                {
+                    playerElevator.transform.parent.position = Vector2.Lerp(playerElevator.transform.parent.position, elevatorDefaultPos, Time.deltaTime * 1.3f);
+                }
+                else
+                {
+                    elapsedTime += Time.deltaTime;
+                }
             }
             networkElevatorPos = playerElevator.transform.parent.position;
         }
@@ -103,12 +112,18 @@ public class TwoPlayersLevel2 : NetworkBehaviour
                 Vector2 veloc = playerController.rg.velocity;
                 //veloc.y = 22;
                 veloc.x = 700;
+                RPC_PlayerLaunchSound();
                 playerController.rg.velocity = veloc;
 
                 // Don't allow jumping right after a jump:
                 playerController.allowJump = false;
             }
         }
+    }
+    [Rpc]
+    public void RPC_PlayerLaunchSound()
+    {
+        SoundManager.instance.PlayOneShot(SoundManager.instance.JumperSFX);
     }
     [Rpc]
     public void RPC_ElevatorText(int collidesCount)

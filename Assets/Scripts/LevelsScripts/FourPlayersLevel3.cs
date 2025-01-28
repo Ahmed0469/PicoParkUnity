@@ -36,7 +36,8 @@ public class FourPlayersLevel3 : NetworkBehaviour
     {
         if (Object.Runner.IsServer)
         {
-            var ball = await Object.Runner.SpawnAsync(ballPrefab.gameObject, ballSpawnPoint.position, ballSpawnPoint.rotation, Object.Runner.LocalPlayer);            
+            var ball = await Object.Runner.SpawnAsync(ballPrefab.gameObject, ballSpawnPoint.position, ballSpawnPoint.rotation, Object.Runner.LocalPlayer);
+            RPC_BallSpawnSound();
             ball.GetComponent<BallScript>().OnCollisionEnter += BallOnCollisionEnter;
         }
     }
@@ -62,6 +63,11 @@ public class FourPlayersLevel3 : NetworkBehaviour
         {
             RPC_SpawnKey();
         }
+    }
+    [Rpc]
+    public void RPC_BallSpawnSound()
+    {
+        SoundManager.instance.PlayOneShot(SoundManager.instance.cannonSFX);
     }
     [Rpc]
     public void RPC_SpawnKey()

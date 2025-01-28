@@ -27,6 +27,7 @@ public class EightPlayersLevel1 : NetworkBehaviour
 
         yield return new WaitUntil(() => !playerChecker.isPlayerThere);
         var ballRb = Object.Runner.Spawn(ballPrefab, ballSpawnPoint.position,ballSpawnPoint.rotation,Object.InputAuthority).GetComponent<Rigidbody2D>();
+        RPC_BallSpawnSound();
         ballRb.GetComponent<BallScript>().OnCollisionEnter += BallOnCollisionEnter;
         ballRb.gravityScale = 0;
         //ballRb.sharedMaterial.bounciness = 0;
@@ -49,7 +50,6 @@ public class EightPlayersLevel1 : NetworkBehaviour
                     RPC_DestroyVase();
                 }
             }
-            Debug.Log(collision.gameObject.name);
             Object.Runner.Despawn(ball.GetComponent<NetworkObject>());
             StartCoroutine(CR());
         }
@@ -57,8 +57,14 @@ public class EightPlayersLevel1 : NetworkBehaviour
     [Rpc]
     public void RPC_DestroyVase()
     {
+        SoundManager.instance.PlayOneShot(SoundManager.instance.vaseSFX);
         isVaseBroken = true;
         vase.SetActive(false);
+    }
+    [Rpc]
+    public void RPC_BallSpawnSound()
+    {
+        SoundManager.instance.PlayOneShot(SoundManager.instance.cannonSFX);
     }
     IEnumerator CR()
     {

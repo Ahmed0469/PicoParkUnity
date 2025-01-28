@@ -20,6 +20,8 @@ namespace Visyde
         [Networked] public string NickName { get; set; }
         [Networked] public int Character { get; set; }
         [Networked] public int ChoosenHat { get; set; }
+        [Networked] public int ChoosenGlasses { get; set; }
+        [Networked] public int ChoosenNecklace { get; set; }
 
         [Header("Settings:")]
         public Color ownerColor;
@@ -45,7 +47,7 @@ namespace Visyde
             }
             if (Object.HasInputAuthority)
             {
-                RPC_Set(PlayerPrefs.GetString("USERNAME"), DataCarrier.chosenCharacter,DataCarrier.chosenHat);
+                RPC_Set(PlayerPrefs.GetString("USERNAME"), DataCarrier.chosenCharacter,DataCarrier.chosenHat,DataCarrier.chosenGlasses,DataCarrier.chosenNecklace);
                 NickName = PlayerPrefs.GetString("USERNAME");
                 Set();
             }
@@ -63,7 +65,7 @@ namespace Visyde
                 //Debug.Log("Actor = " + Connector.instance.playersList.IndexOf(Object.InputAuthority) +
                 //    "nickName = " + NickName + "Character = " + Character);
                 Connector.instance.playerData.Add(Connector.instance.playersList.IndexOf(Object.InputAuthority), new PlayerData
-                { nickName = NickName, characterData = Character, choosenHat = ChoosenHat });
+                { nickName = NickName, characterData = Character, choosenHat = ChoosenHat, choosenGlasses = ChoosenGlasses,choosenNecklace = ChoosenNecklace });
             }
             else
             {
@@ -71,7 +73,7 @@ namespace Visyde
                 //    "nickName = " + NickName + "Character = " + Character);
                 Connector.instance.playerData.Remove(Connector.instance.playersList.IndexOf(Object.InputAuthority));
                 Connector.instance.playerData.Add(Connector.instance.playersList.IndexOf(Object.InputAuthority), new PlayerData
-                { nickName = NickName, characterData = Character, choosenHat = ChoosenHat });
+                { nickName = NickName, characterData = Character, choosenHat = ChoosenHat, choosenGlasses = ChoosenGlasses, choosenNecklace = ChoosenNecklace });
             }
         }
         public void OpenCloseColorPalett()
@@ -81,7 +83,7 @@ namespace Visyde
         public void OnColorSwitchBtn(int colorId)
         {
             DataCarrier.chosenCharacter = colorId;
-            RPC_Set(PlayerPrefs.GetString("USERNAME"), DataCarrier.chosenCharacter, DataCarrier.chosenHat);
+            RPC_Set(PlayerPrefs.GetString("USERNAME"), DataCarrier.chosenCharacter, DataCarrier.chosenHat, DataCarrier.chosenGlasses, DataCarrier.chosenNecklace);
             colorsListObj.SetActive(false);
         }
         private void OnDestroy()
@@ -127,11 +129,13 @@ namespace Visyde
             }
         }
         [Rpc/*(sources:RpcSources.InputAuthority,targets:RpcTargets.All)*/]
-        public void RPC_Set(string nickName,int character,int hat)
+        public void RPC_Set(string nickName,int character,int hat,int glasses,int necklace)
         {   
             NickName = nickName;
             Character = character;
             ChoosenHat = hat;
+            ChoosenGlasses = glasses;
+            ChoosenNecklace = necklace;
         }
 
         public void Kick()

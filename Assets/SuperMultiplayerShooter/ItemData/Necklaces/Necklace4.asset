@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48d6eb4f3f583b449c378dc392fbdd0, type: 3}
+  m_Name: Necklace4
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 5e85a22833d51c949b65640bbff4be7f, type: 3}
+  itemType: 2
+  price: 150
+  inAppID: necklace4iapid
+  prefab: {fileID: 5365664807795619570, guid: 5711b5093d73ede48a3f6c0e2aae755f, type: 3}

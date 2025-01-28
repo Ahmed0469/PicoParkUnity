@@ -57,11 +57,17 @@ public class TwoPlayersLevel3 : NetworkBehaviour
                 var playerController = colliders[i].GetComponent<PlayerController>();
                 Vector2 veloc = playerController.rg.velocity;
                 veloc.y = 30;
+                RPC_JumperSoundSound();
                 playerController.rg.velocity = veloc;
 
                 // Don't allow jumping right after a jump:
                 playerController.allowJump = false;
             }            
         }
+    }
+    [Rpc]
+    public void RPC_JumperSoundSound()
+    {
+        SoundManager.instance.PlayOneShot(SoundManager.instance.JumperSFX);
     }
 }

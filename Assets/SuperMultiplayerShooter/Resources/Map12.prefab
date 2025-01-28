@@ -62,6 +62,117 @@ Transform:
   m_Father: {fileID: 4943749944114745618}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &790844498146287987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3538247969179937733}
+  - component: {fileID: 6174113819030075249}
+  - component: {fileID: 1794699686681965696}
+  m_Layer: 0
+  m_Name: Square (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3538247969179937733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790844498146287987}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.05, y: -0.113, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4395336522640423245}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6174113819030075249
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790844498146287987}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: df550854f4b7722478a487456b8d1aed, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!61 &1794699686681965696
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790844498146287987}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.004737854, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.03, y: 0.66}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1910882, y: 0.66}
+  m_EdgeRadius: 0
 --- !u!1 &839071345873165974
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3464671590116216113
 Transform:
   m_ObjectHideFlags: 0
@@ -221,7 +332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9085969814686689566
 Transform:
   m_ObjectHideFlags: 0
@@ -408,7 +519,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4395336522640423245}
-  - component: {fileID: 4436403243579759256}
   m_Layer: 0
   m_Name: Jumper
   m_TagString: Untagged
@@ -432,36 +542,11 @@ Transform:
   - {fileID: 5475217794801955060}
   - {fileID: 5020818852298087850}
   - {fileID: 9085969814686689566}
+  - {fileID: 3538247969179937733}
   - {fileID: 3972358957083328655}
   m_Father: {fileID: 4943749944114745618}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4436403243579759256
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2591816525664507251}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.022965431, y: 0.015104175}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7213001, y: 0.8601639}
-  m_EdgeRadius: 0
 --- !u!1 &3350840789642058001
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5020818852298087850
 Transform:
   m_ObjectHideFlags: 0
@@ -678,7 +763,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -714,8 +799,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3578735846556398171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.3901, y: -0.5924, z: 0}
-  m_LocalScale: {x: 12.686294, y: 0.92317355, z: 1}
+  m_LocalPosition: {x: -27.6187, y: -0.5924, z: 0}
+  m_LocalScale: {x: 12.229587, y: 0.92317355, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
@@ -763,7 +848,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -873,7 +958,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -957,7 +1042,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1041,7 +1126,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1126,7 +1211,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1188,8 +1273,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3578735847032421551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.7674, y: -0.5924, z: 0}
-  m_LocalScale: {x: 8.137033, y: 0.92317355, z: 1}
+  m_LocalPosition: {x: -15.4969, y: -0.5924, z: 0}
+  m_LocalScale: {x: 7.5959206, y: 0.92317355, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
@@ -1237,7 +1322,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1347,7 +1432,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1432,7 +1517,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1726,7 +1811,7 @@ Transform:
   m_GameObject: {fileID: 3578735848016065197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.89, y: 0.127, z: 0}
-  m_LocalScale: {x: 0.5131, y: 0.4817, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 24399446516286498}
@@ -1774,8 +1859,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.35463423, g: 0.78113204, b: 0.016212158, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1802,14 +1887,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!50 &3578735848016065199
 Rigidbody2D:
@@ -1828,9 +1913,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &146257747866682308
 MonoBehaviour:
@@ -1850,25 +1935,34 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionStayNew:
     m_PersistentCalls:
       m_Calls: []
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionExitNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerEnterNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &3674379026626584076
@@ -2153,7 +2247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5475217794801955060
 Transform:
   m_ObjectHideFlags: 0
@@ -2273,7 +2367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4895850125686858693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.118, z: 0}
+  m_LocalPosition: {x: 0, y: -0.861, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2324,25 +2418,34 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionStayNew:
     m_PersistentCalls:
       m_Calls: []
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionExitNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerEnterNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4943749944010079361
@@ -2626,7 +2729,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2842,7 +2945,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -100
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6707703bedd4ee54693424e69be19679, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2928,7 +3031,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3039,7 +3142,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3150,7 +3253,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3543,8 +3646,8 @@ Transform:
   m_GameObject: {fileID: 6679071335443877135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.914, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 36
@@ -3590,8 +3693,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3618,14 +3721,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335443877132
 MonoBehaviour:
@@ -3657,16 +3760,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -3684,10 +3787,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335458958170
@@ -3718,8 +3830,8 @@ Transform:
   m_GameObject: {fileID: 6679071335458958170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.290001, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 39
@@ -3765,8 +3877,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3793,14 +3905,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335458958175
 MonoBehaviour:
@@ -3832,16 +3944,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -3859,10 +3971,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335488742944
@@ -3893,8 +4014,8 @@ Transform:
   m_GameObject: {fileID: 6679071335488742944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.31, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 7
@@ -3940,8 +4061,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3968,14 +4089,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335488742949
 MonoBehaviour:
@@ -4007,16 +4128,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -4034,10 +4155,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335504946985
@@ -4068,8 +4198,8 @@ Transform:
   m_GameObject: {fileID: 6679071335504946985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.082, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 40
@@ -4115,8 +4245,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4143,14 +4273,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335504946990
 MonoBehaviour:
@@ -4182,16 +4312,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -4209,10 +4339,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335540701973
@@ -4243,8 +4382,8 @@ Transform:
   m_GameObject: {fileID: 6679071335540701973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.7399993, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 22
@@ -4290,8 +4429,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4318,14 +4457,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335540701962
 MonoBehaviour:
@@ -4357,16 +4496,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -4384,10 +4523,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335551018961
@@ -4418,8 +4566,8 @@ Transform:
   m_GameObject: {fileID: 6679071335551018961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.852, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 10
@@ -4465,8 +4613,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4493,14 +4641,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335551018966
 MonoBehaviour:
@@ -4532,16 +4680,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -4559,10 +4707,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335555902452
@@ -4593,8 +4750,8 @@ Transform:
   m_GameObject: {fileID: 6679071335555902452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.076, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 30
@@ -4640,8 +4797,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4668,14 +4825,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335555902441
 MonoBehaviour:
@@ -4707,16 +4864,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -4734,10 +4891,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335644910042
@@ -4768,8 +4934,8 @@ Transform:
   m_GameObject: {fileID: 6679071335644910042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.102, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 6
@@ -4815,8 +4981,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4843,14 +5009,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335644910047
 MonoBehaviour:
@@ -4882,25 +5048,34 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionStayNew:
     m_PersistentCalls:
       m_Calls: []
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionExitNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerEnterNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335678163693
@@ -4931,8 +5106,8 @@ Transform:
   m_GameObject: {fileID: 6679071335678163693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.491999, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 28
@@ -4978,8 +5153,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5006,14 +5181,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335678163682
 MonoBehaviour:
@@ -5045,16 +5220,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -5072,10 +5247,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335711484962
@@ -5106,8 +5290,8 @@ Transform:
   m_GameObject: {fileID: 6679071335711484962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.3239994, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 24
@@ -5153,8 +5337,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5181,14 +5365,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335711484967
 MonoBehaviour:
@@ -5220,16 +5404,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -5247,10 +5431,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335728526614
@@ -5281,8 +5474,8 @@ Transform:
   m_GameObject: {fileID: 6679071335728526614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.33, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 34
@@ -5328,8 +5521,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5356,14 +5549,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335728526603
 MonoBehaviour:
@@ -5395,16 +5588,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -5422,10 +5615,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335783358671
@@ -5456,8 +5658,8 @@ Transform:
   m_GameObject: {fileID: 6679071335783358671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.6999993, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 27
@@ -5503,8 +5705,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5531,14 +5733,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335783358668
 MonoBehaviour:
@@ -5570,16 +5772,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -5597,10 +5799,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335788631389
@@ -10511,7 +10722,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10575,8 +10786,8 @@ Transform:
   m_GameObject: {fileID: 6679071335830167447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.122, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 35
@@ -10622,8 +10833,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10650,14 +10861,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335830167444
 MonoBehaviour:
@@ -10689,16 +10900,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -10716,10 +10927,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335837854866
@@ -10750,8 +10970,8 @@ Transform:
   m_GameObject: {fileID: 6679071335837854866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.664, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 32
@@ -10797,8 +11017,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10825,14 +11045,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335837854871
 MonoBehaviour:
@@ -10864,16 +11084,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -10891,10 +11111,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335873130828
@@ -10925,8 +11154,8 @@ Transform:
   m_GameObject: {fileID: 6679071335873130828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.867999, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 31
@@ -10972,8 +11201,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11000,14 +11229,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335873130817
 MonoBehaviour:
@@ -11039,16 +11268,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -11066,10 +11295,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335946129314
@@ -11100,8 +11338,8 @@ Transform:
   m_GameObject: {fileID: 6679071335946129314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.115999, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 25
@@ -11147,8 +11385,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11175,14 +11413,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335946129319
 MonoBehaviour:
@@ -11214,16 +11452,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -11241,10 +11479,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071335999799177
@@ -11275,8 +11522,8 @@ Transform:
   m_GameObject: {fileID: 6679071335999799177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.9479995, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 21
@@ -11322,8 +11569,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11350,14 +11597,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071335999799182
 MonoBehaviour:
@@ -11389,16 +11636,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -11416,10 +11663,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071336181067190
@@ -11450,8 +11706,8 @@ Transform:
   m_GameObject: {fileID: 6679071336181067190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.706, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 37
@@ -11497,8 +11753,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11525,14 +11781,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071336181067179
 MonoBehaviour:
@@ -11564,16 +11820,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -11591,10 +11847,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071336201526961
@@ -11625,8 +11890,8 @@ Transform:
   m_GameObject: {fileID: 6679071336201526961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.06, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 11
@@ -11672,8 +11937,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11700,14 +11965,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071336201526966
 MonoBehaviour:
@@ -11739,16 +12004,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -11766,10 +12031,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071336225677986
@@ -11800,8 +12074,8 @@ Transform:
   m_GameObject: {fileID: 6679071336225677986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.455999, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 33
@@ -11847,8 +12121,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11875,14 +12149,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071336225677991
 MonoBehaviour:
@@ -11914,16 +12188,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -11941,10 +12215,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071336328134722
@@ -11975,8 +12258,8 @@ Transform:
   m_GameObject: {fileID: 6679071336328134722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.07399893, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 20
@@ -12022,8 +12305,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12050,14 +12333,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071336328134727
 MonoBehaviour:
@@ -12089,16 +12372,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -12116,10 +12399,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071336347545832
@@ -12150,8 +12442,8 @@ Transform:
   m_GameObject: {fileID: 6679071336347545832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.498, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 38
@@ -12197,8 +12489,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12225,14 +12517,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071336347545837
 MonoBehaviour:
@@ -12264,16 +12556,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -12291,10 +12583,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071336348591984
@@ -12325,8 +12626,8 @@ Transform:
   m_GameObject: {fileID: 6679071336348591984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.516, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 18
@@ -12372,8 +12673,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12400,14 +12701,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071336348591989
 MonoBehaviour:
@@ -12439,16 +12740,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -12466,10 +12767,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071336359777370
@@ -12500,8 +12810,8 @@ Transform:
   m_GameObject: {fileID: 6679071336359777370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.476, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 13
@@ -12547,8 +12857,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12575,14 +12885,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071336359777375
 MonoBehaviour:
@@ -12614,16 +12924,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -12641,10 +12951,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071336415359247
@@ -12722,7 +13041,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.85660374, g: 0.5042333, b: 0.21819143, a: 1}
+  m_Color: {r: 0.8313726, g: 0.38431376, b: 0.23137257, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12786,8 +13105,8 @@ Transform:
   m_GameObject: {fileID: 6679071336455289933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.268, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 12
@@ -12833,8 +13152,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12861,14 +13180,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071336455289922
 MonoBehaviour:
@@ -12900,16 +13219,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -12927,10 +13246,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071336702940722
@@ -12961,8 +13289,8 @@ Transform:
   m_GameObject: {fileID: 6679071336702940722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.684, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 14
@@ -13008,8 +13336,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13036,14 +13364,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071336702940727
 MonoBehaviour:
@@ -13075,16 +13403,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -13102,10 +13430,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071336900191239
@@ -13136,8 +13473,8 @@ Transform:
   m_GameObject: {fileID: 6679071336900191239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.436, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 8
@@ -13183,8 +13520,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13211,14 +13548,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071336900191236
 MonoBehaviour:
@@ -13250,16 +13587,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -13277,10 +13614,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071337066003680
@@ -13311,8 +13657,8 @@ Transform:
   m_GameObject: {fileID: 6679071337066003680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.1000001, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 16
@@ -13358,8 +13704,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13386,14 +13732,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071337066003685
 MonoBehaviour:
@@ -13425,16 +13771,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -13452,10 +13798,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071337084953447
@@ -13486,8 +13841,8 @@ Transform:
   m_GameObject: {fileID: 6679071337084953447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.874, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 41
@@ -13533,8 +13888,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13561,14 +13916,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071337084953444
 MonoBehaviour:
@@ -13600,16 +13955,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -13627,10 +13982,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071337126764678
@@ -13661,8 +14025,8 @@ Transform:
   m_GameObject: {fileID: 6679071337126764678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7180009, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 19
@@ -13708,8 +14072,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13736,14 +14100,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071337126764731
 MonoBehaviour:
@@ -13775,16 +14139,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -13802,10 +14166,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071337135018610
@@ -13836,8 +14209,8 @@ Transform:
   m_GameObject: {fileID: 6679071337135018610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.308, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 17
@@ -13883,8 +14256,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13911,14 +14284,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071337135018615
 MonoBehaviour:
@@ -13950,16 +14323,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -13977,10 +14350,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071337141612082
@@ -14011,8 +14393,8 @@ Transform:
   m_GameObject: {fileID: 6679071337141612082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.8920002, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 15
@@ -14058,8 +14440,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14086,14 +14468,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071337141612087
 MonoBehaviour:
@@ -14125,16 +14507,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -14152,10 +14534,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071337175113414
@@ -14186,8 +14577,8 @@ Transform:
   m_GameObject: {fileID: 6679071337175113414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.9079995, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 26
@@ -14233,8 +14624,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14261,14 +14652,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071337175113467
 MonoBehaviour:
@@ -14300,16 +14691,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -14327,10 +14718,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071337225836938
@@ -14361,8 +14761,8 @@ Transform:
   m_GameObject: {fileID: 6679071337225836938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.531999, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 23
@@ -14408,8 +14808,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14436,14 +14836,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071337225836943
 MonoBehaviour:
@@ -14475,16 +14875,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -14502,10 +14902,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071337253147616
@@ -14536,8 +14945,8 @@ Transform:
   m_GameObject: {fileID: 6679071337253147616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.283999, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 29
@@ -14583,8 +14992,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14611,14 +15020,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071337253147621
 MonoBehaviour:
@@ -14650,16 +15059,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -14677,10 +15086,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6679071337263160208
@@ -14796,8 +15214,8 @@ Transform:
   m_GameObject: {fileID: 6679071337371861122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.644, y: -0.464, z: 0}
-  m_LocalScale: {x: 0.72837335, y: 0.66731876, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4943749945469132580}
   m_RootOrder: 9
@@ -14843,8 +15261,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6150943, g: 0.56217444, b: 0.5187682, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4faf9157ea499b24a914f40fb01eff42, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14871,14 +15289,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.53}
   m_EdgeRadius: 0
 --- !u!114 &6679071337371861127
 MonoBehaviour:
@@ -14910,16 +15328,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -14937,10 +15355,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &7583409588755324119
@@ -14969,12 +15396,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7583409588755324119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.294, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4395336522640423245}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &9130055632657975154
 BoxCollider2D:
@@ -14989,7 +15416,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.020607471, y: 0.48121092}
+  m_Offset: {x: 0.040536642, y: 0.48121092}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -15000,7 +15427,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.62946796, y: 0.06909114}
+  m_Size: {x: 1.1079946, y: 0.06909114}
   m_EdgeRadius: 0
 --- !u!114 &5235656837136067668
 MonoBehaviour:
@@ -15020,16 +15447,16 @@ MonoBehaviour:
   onCollisionEnterNew:
     m_PersistentCalls:
       m_Calls: []
-  onCollisionStayNew:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStayNew:
-    m_PersistentCalls:
-      m_Calls: []
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
+  onCollisionStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExitNew:
     m_PersistentCalls:
       m_Calls: []
   onTriggerEnter:
@@ -15040,17 +15467,26 @@ MonoBehaviour:
         m_MethodName: Jumper
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1049056332574494804}
+          m_ObjectArgument: {fileID: 790844498146287987}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTriggerEnterNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
+  onTriggerStayNew:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitNew:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &8119594198528086348

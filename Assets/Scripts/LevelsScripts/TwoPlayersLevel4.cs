@@ -57,6 +57,7 @@ public class TwoPlayersLevel4 : NetworkBehaviour
                 {
                     Vector2 veloc = playerController.rg.velocity;
                     veloc.y = 27;
+                    RPC_JumperSoundSound();
                     playerController.rg.velocity = veloc;
 
                     // Don't allow jumping right after a jump:
@@ -66,6 +67,7 @@ public class TwoPlayersLevel4 : NetworkBehaviour
                 {
                     Vector2 veloc = collidedRb.velocity;
                     veloc.y = 25;
+                    RPC_JumperSoundSound();
                     //veloc.x = 5;
                     collidedRb.velocity = veloc;
                 }
@@ -86,9 +88,15 @@ public class TwoPlayersLevel4 : NetworkBehaviour
         }
     }
     [Rpc]
+    public void RPC_JumperSoundSound()
+    {
+        SoundManager.instance.PlayOneShot(SoundManager.instance.JumperSFX);
+    }
+    [Rpc]
     public void RPC_FallTriangle(int triangleId)
     {
-        triangleObjList[triangleId].GetComponent<Rigidbody2D>().gravityScale = 10;        
+        triangleObjList[triangleId].GetComponent<Rigidbody2D>().gravityScale = 10;
+        SoundManager.instance.PlayOneShot(SoundManager.instance.wallBreakSFX);
     }
     public void SubsscribeTrianglesObj(LevelItem levelItem)
     {

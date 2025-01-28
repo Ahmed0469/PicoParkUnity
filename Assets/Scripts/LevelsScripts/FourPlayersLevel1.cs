@@ -24,6 +24,7 @@ public class FourPlayersLevel1 : NetworkBehaviour
     {
         if (Object.Runner.IsServer)
         {
+            RPC_BallSpawnSound();
             var ball = await Object.Runner.SpawnAsync(ballPrefab.gameObject, ballSpawnPoint.position, ballSpawnPoint.rotation, Object.Runner.LocalPlayer);                
             var ballRb = ball.GetComponent<Rigidbody2D>();
             ballRb.AddForce(Vector2.left * 50);
@@ -56,8 +57,14 @@ public class FourPlayersLevel1 : NetworkBehaviour
         }        
     }
     [Rpc]
+    public void RPC_BallSpawnSound()
+    {
+        SoundManager.instance.PlayOneShot(SoundManager.instance.cannonSFX);
+    }
+    [Rpc]
     void RPC_DestoryVase()
     {
+        SoundManager.instance.PlayOneShot(SoundManager.instance.vaseSFX);
         vase.SetActive(false);
     }
 }

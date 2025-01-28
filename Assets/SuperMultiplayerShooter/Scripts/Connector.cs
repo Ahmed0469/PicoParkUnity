@@ -94,12 +94,12 @@ namespace Visyde
         }
 
         void Awake()
-        {
+        {            
             if (instance != null && instance != this)
-            {
+            {                
                 Destroy(instance.gameObject);
                 instance = null;
-            }
+            }            
             instance = this;
             DontDestroyOnLoad(gameObject);
             if (networkRunner == null)
@@ -138,7 +138,7 @@ namespace Visyde
             lobbyItems = new();
             networkRunner.RemoveCallbacks(this);
             await networkRunner.Shutdown();
-            if (SceneManager.GetActiveScene().name == "MainMenu")
+            if (SceneManager.GetActiveScene().name == "MainMenu" && regionSelected)
             {
                 networkRunner = Instantiate(networkRunnerPrefab);
                 recorder = networkRunner.GetComponent<Recorder>();
@@ -148,60 +148,63 @@ namespace Visyde
         }
         public IEnumerator Reconnection()
         {
-            if (networkRunner == null)
+            if (regionSelected)
             {
-                networkRunner = Instantiate(networkRunnerPrefab);
-                recorder = networkRunner.GetComponent<Recorder>();
-                networkRunner.AddCallbacks(this);
-            }
-            yield return new WaitForSeconds(0.5f);
-            if (!networkRunner.IsCloudReady /*|| PhotonNetwork.NetworkClientState == ClientState.ConnectingToMasterServer*/)
-            {
-                string roomName = PlayerPrefs.GetString("USERNAME") + "Default";
-                var customProps = new Dictionary<string, SessionProperty>();
+                if (networkRunner == null)
+                {
+                    networkRunner = Instantiate(networkRunnerPrefab);
+                    recorder = networkRunner.GetComponent<Recorder>();
+                    networkRunner.AddCallbacks(this);
+                }
+                yield return new WaitForSeconds(0.5f);
+                if (!networkRunner.IsCloudReady /*|| PhotonNetwork.NetworkClientState == ClientState.ConnectingToMasterServer*/)
+                {
+                    string roomName = PlayerPrefs.GetString("USERNAME") + "Default";
+                    var customProps = new Dictionary<string, SessionProperty>();
 
-                customProps["isDefault"] = (bool)true;
-                networkRunner.JoinSessionLobby(SessionLobby.Custom, "default",null,BuildCustomAppSetting(selectedRegion));
-                //CreateSession(roomName, false, 1, customProps);
+                    customProps["isDefault"] = (bool)true;
+                    networkRunner.JoinSessionLobby(SessionLobby.Custom, "default", null, BuildCustomAppSetting(selectedRegion));
+                    //CreateSession(roomName, false, 1, customProps);
+                }
             }
-            //StartCoroutine(Reconnection());
         }
         public async void RefreshRegionDropdown()
         {
-            if (!regionSelected)
+            regionSelectorPanel.gameObject.SetActive(true);
+            for (int i = 0; i < regionItemHandler.childCount; i++)
             {
-                regionSelectorPanel.gameObject.SetActive(true);
-                _tokenSource = new CancellationTokenSource();                
-                var regions = await NetworkRunner.GetAvailableRegions(cancellationToken: _tokenSource.Token);                
-                for (int i = 0; i < regions.Count; i++)
+                Destroy(regionItemHandler.GetChild(i).gameObject);
+            }
+            _tokenSource = new CancellationTokenSource();
+            var regions = await NetworkRunner.GetAvailableRegions(cancellationToken: _tokenSource.Token);            
+            for (int i = 0; i < regions.Count; i++)
+            {
+                var item = Instantiate(regionItem, regionItemHandler, false);
+                item.transform.GetChild(0).GetComponent<Text>().text = regions[i].RegionCode;
+                item.transform.GetChild(1).GetComponent<Text>().text = regions[i].RegionPing.ToString();
+                if (regions[i].RegionPing <= 120)
                 {
-                    var item = Instantiate(regionItem, regionItemHandler, false);
-                    item.transform.GetChild(0).GetComponent<Text>().text = regions[i].RegionCode;
-                    item.transform.GetChild(1).GetComponent<Text>().text = regions[i].RegionPing.ToString();
-                    if (regions[i].RegionPing <= 120)
-                    {
-                        item.transform.GetChild(1).GetComponent<Text>().color = Color.green;
-                        item.transform.SetAsFirstSibling();
-                    }
-                    if (regions[i].RegionPing > 120 && regions[i].RegionPing <= 150)
-                    {
-                        item.transform.GetChild(1).GetComponent<Text>().color = Color.yellow;                        
-                    }
-                    if (regions[i].RegionPing > 150)
-                    {
-                        item.transform.GetChild(1).GetComponent<Text>().color = Color.red;
-                    }
-                    item.GetComponent<Button>().onClick.AddListener(() =>
-                    {
-                        selectedRegion = item.transform.GetChild(0).GetComponent<Text>().text;
-                        selectedRegionPing = int.Parse(item.transform.GetChild(1).GetComponent<Text>().text);
-                        regionSelectorPanel.gameObject.SetActive(false);
-                        regionSelected = true;
-                        StartCoroutine(Reconnection());
-                    }
-                    );
+                    item.transform.GetChild(1).GetComponent<Text>().color = Color.green;
+                    item.transform.SetAsFirstSibling();
                 }
-            }                      
+                if (regions[i].RegionPing > 120 && regions[i].RegionPing <= 150)
+                {
+                    item.transform.GetChild(1).GetComponent<Text>().color = Color.yellow;
+                }
+                if (regions[i].RegionPing > 150)
+                {
+                    item.transform.GetChild(1).GetComponent<Text>().color = Color.red;
+                }
+                item.GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    selectedRegion = item.transform.GetChild(0).GetComponent<Text>().text;
+                    selectedRegionPing = int.Parse(item.transform.GetChild(1).GetComponent<Text>().text);
+                    regionSelectorPanel.gameObject.SetActive(false);
+                    regionSelected = true;
+                    StartCoroutine(Reconnection());
+                }
+                );
+            }
         }
         public async void CreateSession(string roomName, bool isVisible, int maxPlayers, Dictionary<string, SessionProperty> sessionProperty)
         {
@@ -291,22 +294,22 @@ namespace Visyde
         // Update is called once per frame
         void Update()
         {
-            if (networkRunner == null)
+            if (timeElapsed > 2)
             {
-                if (timeElapsed > 2)
+                if (networkRunner == null)
                 {
                     StartCoroutine(Reconnection());
-                    timeElapsed = 0;
                 }
-                else
+                if (networkRunner != null && !networkRunner.IsCloudReady)
                 {
-                    timeElapsed += Time.deltaTime;
+                    StartCoroutine(Reconnection());
                 }
+                timeElapsed = 0;
             }
             else
             {
-                timeElapsed = 0;
-            }
+                timeElapsed += Time.deltaTime;
+            }            
             if (networkRunner.IsInSession)
             {
                 if (recorder != null && recorder.VoiceDetector.Detected && onVoiceDetected != null)
@@ -545,6 +548,7 @@ namespace Visyde
             {
                 inCustom = true;
             }
+            SoundManager.instance.audioSource.volume = 0.1f;
             GameManager.gameMode = GameMode.Multiplayer;
             tryingToJoinCustom = false;
 
@@ -630,8 +634,6 @@ namespace Visyde
                 {
                     GameManager.instance.ui.DisplayMessage(instance.playerData[playersList.IndexOf(player)].nickName + " left the match", UIManager.MessageType.LeftTheGame);
                 }
-
-            
             }
             playerData.Remove(playersList.IndexOf(player));
             playersList.Remove(player);
@@ -757,4 +759,6 @@ public class PlayerData
     public string nickName;
     public int characterData;
     public int choosenHat;
+    public int choosenGlasses;
+    public int choosenNecklace;
 }

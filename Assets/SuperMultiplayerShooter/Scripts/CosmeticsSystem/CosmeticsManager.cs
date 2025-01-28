@@ -14,8 +14,15 @@ namespace Visyde
     {
         // Internals:
         public int chosenHat;
+        public int lastChosenHat;
+        public int chosenGlasses;
+        public int lastChosenGlasses;
+        public int chosenNecklace;
+        public int lastChosenNecklace;
         PlayerController player;
-        List<GameObject> spawnedItems = new List<GameObject>();
+        List<GameObject> spawnedHats = new List<GameObject>();
+        List<GameObject> spawnedGlasses = new List<GameObject>();
+        List<GameObject> spawnedNecklaces = new List<GameObject>();
 
         void OnEnable(){
             player = GetComponent<PlayerController>();
@@ -28,31 +35,72 @@ namespace Visyde
 
         public void Refresh(Cosmetics cosmetics){
             chosenHat = cosmetics.hat;
+            chosenGlasses = cosmetics.glasses;
+            chosenNecklace = cosmetics.necklace;
 
             Refresh();
         }
         public void Refresh()
         {
             // Remove existing cosmetic items if there's any:
-            for (int i = 0; i < spawnedItems.Count; i++)
+            if (lastChosenHat != chosenHat)
             {
-                if (spawnedItems[i]) Destroy(spawnedItems[i]);
-            }
-            spawnedItems = new List<GameObject>();
-
+                for (int i = 0; i < spawnedHats.Count; i++)
+                {
+                    if (spawnedHats[i]) Destroy(spawnedHats[i]);
+                }
+                spawnedHats = new List<GameObject>();
+                lastChosenHat = chosenHat;
+            }            
             // If has hat:
             if (chosenHat >= 0)
             {
                 GameObject item = Instantiate(ItemDatabase.instance.hats[chosenHat].prefab, player.character.hatPoint);
                 ResetItemPosition(item.transform);
-                spawnedItems.Add(item);
+                spawnedHats.Add(item);
+            }
+
+            if (lastChosenGlasses != chosenGlasses)
+            {
+                // Remove existing cosmetic items if there's any:
+                for (int i = 0; i < spawnedGlasses.Count; i++)
+                {
+                    if (spawnedGlasses[i]) Destroy(spawnedGlasses[i]);
+                }
+                spawnedGlasses = new List<GameObject>();
+                lastChosenGlasses = chosenGlasses;
+            }            
+            // If has hat:
+            if (chosenGlasses >= 0)
+            {
+                GameObject item = Instantiate(ItemDatabase.instance.glasses[chosenGlasses].prefab, player.character.glassesPoint);
+                ResetItemPosition(item.transform);
+                spawnedGlasses.Add(item);
+            }
+
+            if (lastChosenNecklace != chosenNecklace)
+            {
+                // Remove existing cosmetic items if there's any:
+                for (int i = 0; i < spawnedNecklaces.Count; i++)
+                {
+                    if (spawnedNecklaces[i]) Destroy(spawnedNecklaces[i]);
+                }
+                spawnedNecklaces = new List<GameObject>();
+                lastChosenNecklace = chosenNecklace;
+            }            
+            // If has hat:
+            if (chosenNecklace >= 0)
+            {
+                GameObject item = Instantiate(ItemDatabase.instance.necklaces[chosenNecklace].prefab, player.character.necklacePoint);
+                ResetItemPosition(item.transform);
+                spawnedNecklaces.Add(item);
             }
         }
 
         void ResetItemPosition(Transform item){
             item.localEulerAngles = Vector3.zero;
             item.localPosition = Vector3.zero;
-            item.localScale = Vector3.one;
+            //item.localScale = Vector3.one;
         }
     }
 }

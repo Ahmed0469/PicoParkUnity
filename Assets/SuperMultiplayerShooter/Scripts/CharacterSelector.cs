@@ -12,14 +12,16 @@ namespace Visyde
     public class CharacterSelector : MonoBehaviour
     {
         public CharacterSelectorItem itemPrefab;
-        public CharacterData[] characters;
+        public CharacterData characterData;
+        public CharacterData[] singlePlayerCharactersData;
         public Transform content;
         public Connector connector;
         public SampleMainMenu mainMenu;
 
         void Start()
         {
-            DataCarrier.characters = characters;
+            DataCarrier.characterData = characterData;
+            DataCarrier.singlePlayerCharactersData = singlePlayerCharactersData;
         }
 
         /// <summary>
@@ -34,12 +36,12 @@ namespace Visyde
             }
 
             // Repopulate items:
-            for (int i = 0; i < characters.Length; i++)
-            {
-                CharacterSelectorItem item = Instantiate(itemPrefab, content);
-                item.data = characters[i];
-                item.cs = this;
-            }
+            //for (int i = 0; i < characters.Length; i++)
+            //{
+            //    CharacterSelectorItem item = Instantiate(itemPrefab, content);
+            //    item.data = characters[i];
+            //    item.cs = this;
+            //}
         }
 
         // Character selection:
@@ -49,13 +51,13 @@ namespace Visyde
             mainMenu.characterSelectionPanel.SetActive(false);
 
             // ...then set the "character using" in the DataCarrier:
-            for (int i = 0; i < characters.Length; i++)
-            {
-                if (data == characters[i])
-                {
-                    DataCarrier.chosenCharacter = i;
-                }
-            }
+            //for (int i = 0; i < characters.Length; i++)
+            //{
+            //    if (data == characters[i])
+            //    {
+            //        DataCarrier.chosenCharacter = i;
+            //    }
+            //}
 
             mainMenu.characterIconPresenter.sprite = data.icon;
         }

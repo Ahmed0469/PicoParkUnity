@@ -13,13 +13,14 @@ namespace Visyde
     public class Cosmetics
     {
         public int hat;
-        public int backpack;        // sample only, no effect at the moment
-                                    // add more items here...
+        public int glasses;
+        public int necklace;
 
-        public Cosmetics(int hat = -1, int backpack = -1)
+        public Cosmetics(int hat = -1, int glasses = -1,int necklace = -1)
         {
             this.hat = hat;
-            this.backpack = backpack;
+            this.glasses = glasses;
+            this.necklace = necklace;
         }
     }
 }

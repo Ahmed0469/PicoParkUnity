@@ -19,6 +19,7 @@ public class TwoPlayerLevel1 : NetworkBehaviour
     public Transform weightBoxObj;
     public TextMeshPro elevatorText;
     Vector2 elevatorDefaultPos;
+    float elapsedTime = 0;
 
     private void Start()
     {
@@ -42,7 +43,7 @@ public class TwoPlayerLevel1 : NetworkBehaviour
         {
             if (!Object.HasStateAuthority)
             {
-                playerElevator.transform.parent.position = Vector2.SmoothDamp(transform.position, networkElevatorPos, ref veloc, 0.1f);
+                playerElevator.transform.parent.position = Vector2.SmoothDamp(playerElevator.transform.parent.position, networkElevatorPos, ref veloc, 0.1f);
                 weightBoxObj.transform.position = Vector2.SmoothDamp(weightBoxObj.transform.position, networkWeightBlockPos, ref veloc, 0.1f);
             }
         }        
@@ -71,10 +72,18 @@ public class TwoPlayerLevel1 : NetworkBehaviour
                 if (collideds.Count == Connector.instance.networkRunner.SessionInfo.PlayerCount + 1)
                 {
                     playerElevator.transform.parent.position = Vector2.Lerp(playerElevator.transform.parent.position, new Vector3(playerElevator.transform.parent.position.x, 5), Time.deltaTime / 2);
+                    elapsedTime = 0;
                 }
                 else
                 {
-                    playerElevator.transform.parent.position = Vector2.Lerp(playerElevator.transform.parent.position, elevatorDefaultPos, Time.deltaTime * 1.3f);
+                    if (elapsedTime > 1)
+                    {
+                        playerElevator.transform.parent.position = Vector2.Lerp(playerElevator.transform.parent.position, elevatorDefaultPos, Time.deltaTime * 1.3f);
+                    }
+                    else
+                    {
+                        elapsedTime += Time.deltaTime;
+                    }
                 }
                 networkElevatorPos = playerElevator.transform.parent.position;
             }
@@ -101,6 +110,7 @@ public class TwoPlayerLevel1 : NetworkBehaviour
         GameObject blockToDestroy = bridgeBlocks.Find(block => block.name == blockName);
         if (blockToDestroy != null)
         {
+            SoundManager.instance.PlayOneShot(SoundManager.instance.wallBreakSFX);
             blockToDestroy.SetActive(false);
         }
     }
@@ -120,6 +130,7 @@ public class TwoPlayerLevel1 : NetworkBehaviour
                 {
                     Vector2 veloc = playerController.rg.velocity;
                     veloc.y = 20;
+                    RPC_JumperSoundSound();
                     playerController.rg.velocity = veloc;
 
                     // Don't allow jumping right after a jump:
@@ -129,10 +140,16 @@ public class TwoPlayerLevel1 : NetworkBehaviour
                 {
                     Vector2 veloc = collidedRb.velocity;
                     veloc.y = 10;
+                    RPC_JumperSoundSound();
                     //veloc.x = 5;
                     collidedRb.velocity = veloc;
                 }          
             }            
         }
+    }
+    [Rpc]
+    public void RPC_JumperSoundSound()
+    {
+        SoundManager.instance.PlayOneShot(SoundManager.instance.JumperSFX);
     }
 }
